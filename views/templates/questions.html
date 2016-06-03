@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row col-md-8">
+        <label name="contactName">What is the contact's first name?</label><input type=text ng-model="contactName" name="contactName">
+        <br>
+        <label name="productName">Which product are they testing?</label>
+        <select name="productName" ng-model="productName" id="productSelect">
+            <option value="Acronis Backup">Acronis Backup</option>
+            <option value="Acronis Backup Advanced">Acronis Backup Advanced</option>
+            <option value="Acronis Snap Deploy">Acronis Snap Deploy</option>
+            <option value="Acronis Backup Service">Acronis Backup Service</option>
+        </select>
+        <div id="platformSelectContainer" ng-show="detectProduct(productName)">
+            <label name="platformName">For:</label>
+            <select name="platform" ng-model="platform" id="platformSelect">
+                <option value="PC" selected>PC</option>
+                <option value="Windows Server">Windows Server</option>
+                <option value="VMware">VMware</option>
+                <option value="Hyper-V">Hyper-V</option>
+            </select>
+        </div>
+        <p>Hello <strong>{{contactName}}</strong>. My name is {{name}} and I am an Acronis Backup specialist. {{contactName}}, I know that right now you are testing our product <strong>{{productName}} <span ng-show="detectProduct(productName)">for {{platform}}</span></strong>.</p>
+        <p>The goal of my call is help you to choose the best product from our portfolio that will fit your needs and agree on next steps.</p>Do you have a few minutes for me?</p>
+        <button class="btn btn-success" ng-click="timeForCall=true">Yes</button>
+        <button class="btn btn-danger" ng-click="timeForCall=false">No</button>
+            <div id="timeContainer" ng-hide="timeForCall == undefined">
+                <div id="timeForCall" ng-show="timeForCall">
+                    <p>Thank you. In order to save your time and to know what questions to ask you, please help me to understand what is your role in the company?</p>
+                    <input type="text" id="role" ng-model="role">
+                    <p>What is your task in connection to {{productName}} <span ng-show="detectProduct(productName)">for {{platform}}?</span></p>
+                    <textarea id="task" ng-model="task" rows="3" cols="50"></textarea>
+                </div>
+                <p ng-hide="timeForCall">What is the best time to call you back today?</p>
+            </div>
+    </div>
+</div>

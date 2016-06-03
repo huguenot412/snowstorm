@@ -1,0 +1,10 @@
+.iconContainer {
+    width: 20px;
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.icon {
+    font-size: 1.5em;
+}

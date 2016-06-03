@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+
+<head>
+    <title>Call Flow</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../resources/css/stylesheet.css">
+        
+    <!-- Ion Icons CSS -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+</head>
+
+<body ng-controller="mainController">
+    <div class="container">
+        <div class="row col-md-9">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default" ng-repeat="section in sections">
+                    <div class="panel-heading">
+                          <h4 class="panel-title">
+                                <a data-toggle="collapse" href="{{'#' + section.className}}">
+                                    <div class="iconContainer"><span class="icon {{section.icon}}"></span></div>
+                                {{ section.title }}</a>
+                          </h4>
+                    </div>    
+                    <div id="{{section.className}}" class="panel-collapse collapse">
+                        <content></content>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-3">
+            <div class="button btn btn-default" ng-click="expandAll()">Expand All Sections</div>
+            <div class="button btn btn-default" ng-click="collapseAll()">Collapse All Sections</div>
+        </div>
+    </div>
+    
+    
+   
+    
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- AngularJS Library -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- App -->
+    <script src="../app/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="../app/controllers/maincontroller.js"></script>
+    
+    <!-- Services -->
+
+
+</body>
+
+</html>
