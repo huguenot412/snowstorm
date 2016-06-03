@@ -5,10 +5,10 @@ myApp.directive("sectionContent", function() {
       template: '<ng-include src="getTemplateUrl()"/>',
       replace: true,
       restrict: "ACE",
-      scope: true,
+      scope: false,
       controller: function($scope) {
           $scope.getTemplateUrl = function() {
-              return $scope.section.className + ".html";
+              return "templates/" + $scope.section.className + ".html";
             }
         }
     }

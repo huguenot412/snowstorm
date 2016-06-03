@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row col-md-8">
+        <label name="contactName">What is the contact's first name?</label><input type=text ng-model="section.data.contactName" name="contactName">
+        <br>
+        <label name="productName">Which product are they testing?</label>
+        <select name="productName" ng-model="section.data.productName" id="productSelect">
+            <option value="Acronis Backup">Acronis Backup</option>
+            <option value="Acronis Backup Advanced">Acronis Backup Advanced</option>
+            <option value="Acronis Snap Deploy">Acronis Snap Deploy</option>
+            <option value="Acronis Backup Service">Acronis Backup Service</option>
+        </select>
+        <div id="platformSelectContainer" ng-show="detectProduct(section.data.productName)">
+            <label name="section.data.platformName">For:</label>
+            <select name="platform" ng-model="section.data.platform" id="platformSelect">
+                <option value="PC" selected>PC</option>
+                <option value="Windows Server">Windows Server</option>
+                <option value="VMware">VMware</option>
+                <option value="Hyper-V">Hyper-V</option>
+            </select>
+        </div>
+    </div>
+</div>

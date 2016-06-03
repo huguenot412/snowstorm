@@ -29,7 +29,7 @@
                           </h4>
                     </div>    
                     <div id="{{section.className}}" class="panel-collapse collapse">
-                        <section-content></section-content>
+                        <ng-include src="getTemplateUrl(section.className)"></ng-include>
                     </div>
                 </div>
             </div>

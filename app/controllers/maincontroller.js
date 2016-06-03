@@ -5,13 +5,14 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         
     }
     
-    $scope.name = "Chris Snow";
-    $scope.contactName;
-    $scope.productName = "Product Name";
-    $scope.timeForCall;
-    $scope.role;
-    $scope.task;
-    $scope.template = "content";
+    $scope.data = {
+        name: "",
+        contactName: "",
+        productName: "",
+        timeForCall: null,
+        role: "",
+        task: ""
+    };
     
     $scope.detectProduct = function(product){
         if(product == "Acronis Backup" || product == "Acronis Backup Advanced"){
@@ -25,49 +26,53 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         $(".panel-collapse").addClass("in");
     }
     
+    $scope.getTemplateUrl = function(className) {
+        return "templates/" + className + ".html";
+    }
+    
     $scope.sections = [
         
         {
             title: "Call Prep",
             className: "callPrep",
             icon: "ion-search",
-            directive: "<call-prep></call-prep>"
+            data: $scope.data
         },
         {
             title: "Introduction",
             className: "introduction",
             icon: "ion-android-contacts",
-            directive: "intro-questions"
+            data: $scope.data
         },       
         {
             title: "Situation",
             className: "situation",
             icon: "ion-help",
-            directive: "situation"
+            data: $scope.data
         },
         {
             title: "Problem",
             className: "problem",
             icon: "ion-nuclear",
-            directive: "problem"
+            data: $scope.data
         },
         {
             title: "Implication",
             className: "implication",
             icon: "ion-alert",
-            directive: "implication"
+            data: $scope.data
         },
         {
             title: "Need Payoff",
             className: "needPayoff",
             icon: "ion-cash",
-            directive: "need-payoff"
+            data: $scope.data
         },
         {
             title: "Next Steps",
             className: "nextSteps",
             icon: "ion-skip-forward",
-            directive: "next-steps"
+            data: $scope.data
         }
         
     ];
