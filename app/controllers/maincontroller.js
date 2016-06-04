@@ -10,7 +10,7 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     }
     
     $scope.data = {
-        name: "",
+        name: "Chris Snow",
         contactName: "",
         productName: "",
         timeForCall: null,
@@ -25,9 +25,7 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
             return false;
         }
     }
-    
-    
-    
+       
     $scope.getTemplateUrl = function(className) {
         return "templates/" + className + ".html";
     }
