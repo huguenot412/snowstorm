@@ -1,8 +1,12 @@
 myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
     $scope.collapseAll = function(){
-        $(".panel-collapse").removeClass("in");
+        $(".panel-collapse").removeClass("in").attr({ariaExpanded: "false", style: "height: 0px;"});
         
+    }
+    
+    $scope.expandAll = function(){
+        $(".panel-collapse").addClass("in").attr("aria-expanded", "true").removeAttr("style");
     }
     
     $scope.data = {
@@ -22,9 +26,7 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         }
     }
     
-    $scope.expandAll = function(){
-        $(".panel-collapse").addClass("in");
-    }
+    
     
     $scope.getTemplateUrl = function(className) {
         return "templates/" + className + ".html";
