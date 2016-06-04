@@ -10,6 +10,7 @@
                 <input type="text" id="role" ng-model="section.data.role">
                 <p>What is your task in connection to {{section.data.productName}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}?</span></p>
                 <textarea id="task" ng-model="task" rows="3" cols="50"></textarea>
+                <p ng-show="section.data.locations > 1">I was looking on your company website and found our that you have several subsidiaries. Are you responsible for whole group of companies to just the subsidiary?</p>
             </div>
             <p ng-hide="section.data.timeForCall">What is the best time to call you back today?</p>
         </div>

@@ -11,11 +11,13 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
     $scope.data = {
         name: "Chris Snow",
-        contactName: "",
-        productName: "",
+        contactName: "CONTACT",
+        productName: "PRODUCT",
         timeForCall: null,
-        role: "",
-        task: ""
+        role: "ROLE",
+        task: "",
+        locations: "1",
+        reason: null
     };
     
     $scope.detectProduct = function(product){
@@ -23,6 +25,17 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
             return true;
         } else {
             return false;
+        }
+    }
+    
+    $scope.getSolutionType = function(product){
+        if (product == "PRODUCT") {
+            return "";
+        }
+        else if(product == "Acronis Snap Deploy") {
+            return "deployment";
+        } else {
+            return "backup";
         }
     }
        

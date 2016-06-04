@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row col-md-8">
+        <p>{{section.data.contactName}}, please help me to understand what happened in the company that made you start looking for a new {{getSolutionType(section.data.productName)}} solution? </p>
+        <textarea rows="3" cols="60"></textarea>
+        <br>
+        <button class="btn" ng-click="section.data.reason = 'event'">Compelling Event</button>
+        <button class="btn" ng-click="section.data.reason = 'project'">Project</button>
+        <div ng-hide="section.data.reason == null">
+            <div ng-show="section.data.reason == 'event'">
+                <p>Event</p>
+            </div>
+            <div ng-show="section.data.reason == 'project'">
+                <p>Project</p>
+            </div>
+        </div>
+    </div>
+</div>
