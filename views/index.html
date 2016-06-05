@@ -18,7 +18,7 @@
 
 <body ng-controller="mainController">
     <div class="container">
-        <div class="row col-md-9">
+        <div class="row col-md-7">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default" ng-repeat="section in sections">
                     <div class="panel-heading">
@@ -34,10 +34,36 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row col-md-3">
+            <br>
             <div class="button btn btn-default" ng-click="expandAll()">Expand All Sections</div>
             <div class="button btn btn-default" ng-click="collapseAll()">Collapse All Sections</div>
+        </div>
+        <div class="row col-md-1"></div>
+        <div class="row col-md-4" id="summaryBox">
+            <div class="affix">
+                <h3>Call Summary</h3>
+                <hr>
+                <h4>Company Name</h4>
+                <p>{{ data.companyName }}</p>
+                <h4>Company Description</h4>
+                <p>{{ data.companyDescription }}</p>
+                <h4>Number of Locations</h4>
+                <p>{{ data.locations }}</p>
+                <h4>Contact Name</h4>
+                <p>{{ data.contactName }}</p>
+                <h4>Contact Role</h4>
+                <p>{{ data.role }}</p>
+                <h4>Decision Maker</h4>
+                <p>{{ data.decisionMaker }}</p>
+                <h4>Product</h4>
+                <p>{{ data.productName }}</p>
+                <h4>Reason for new solution</h4>
+                <p>{{ data.reason }}</p>
+                <h4>Urgency / Timeframe</h4>
+                <p>{{ data.timeframe }}</p>
+                <h4>Budget</h4>
+                <p>{{ data.budget }}</p>
+            </div>
         </div>
     </div>
     

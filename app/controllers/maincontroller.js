@@ -16,8 +16,13 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         timeForCall: null,
         role: "ROLE",
         task: "",
-        locations: "1",
-        reason: null
+        locations: 1,
+        companyInfo: "",
+        reason: null,
+        budget: "",
+        timeframe: "",
+        companyName: "",
+        companyDescription: ""
     };
     
     $scope.detectProduct = function(product){
@@ -89,7 +94,7 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         },
         {
             title: "Next Steps",
-            description: "Agree on everone's next steps and schedule a specific date and time for a follow up. Leaving this to chance is the best way to ensure that you will be leaving them lots of voicemails",
+            description: "Agree on everyone's next steps and schedule a specific date and time for a follow up. Leaving this to chance is the best way to ensure that you will be leaving them lots of voicemails",
             className: "nextSteps",
             icon: "ion-skip-forward",
             data: $scope.data
