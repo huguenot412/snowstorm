@@ -1,18 +1,10 @@
 <div class="container">
     <div class="row col-md-8"> 
         <p>Hello <strong>{{section.data.contactName}}</strong>. My name is {{section.data.name}} and I am an Acronis Backup specialist. {{section.data.contactName}}, I know that right now you are testing our product <strong>{{section.data.productName}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}</span></strong>.</p>
-        <p>The goal of my call is help you to choose the best product from our portfolio that will fit your needs and agree on next steps.</p>Do you have a few minutes for me?</p>
-        <button class="btn btn-success" ng-click="section.data.timeForCall=true">Yes</button>
-        <button class="btn btn-danger" ng-click="section.data.timeForCall=false">No</button>
-        <div id="timeContainer" ng-hide="section.data.timeForCall == null">
-            <div id="timeForCall" ng-show="section.data.timeForCall">
-                <p>Thank you. In order to save your time and to know what questions to ask you, please help me to understand what is your role in the company?</p>
-                <input type="text" id="role" ng-model="section.data.role">
-                <p>What is your task in connection to {{section.data.productName}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}?</span></p>
-                <textarea id="task" ng-model="task" rows="3" cols="50"></textarea>
-                <p ng-show="section.data.locations > 1">I was looking on your company website and found our that you have several subsidiaries. Are you responsible for whole group of companies to just the subsidiary?</p>
-            </div>
-            <p ng-hide="section.data.timeForCall">What is the best time to call you back today?</p>
-        </div>
+        
+        <p>The goal of my call is help you to choose the best product from our portfolio that will fit your needs and agree on next steps.</p>
+        
+        <p>I will be your primary contact at Acronis throughout your evaluation period. In addition to advising you on the right products and licensing for your project I can also help by arranging  </p>
+        
     </div>
 </div>
