@@ -17,6 +17,46 @@
 </head>
 
 <body ng-controller="mainController">
+   
+   <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">M* Call Flow</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Call Guides <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">ITAM</a></li>
+                <li><a href="#">LDR</a></li>
+                <li><a href="#">MSP</a></li>
+                <li><a href="#">IPAM</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Price List</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Product Overviews</a></li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+   
     <div class="container">
         <div class="row col-md-7">
             <div class="panel-group" id="accordion">
@@ -38,9 +78,7 @@
             <div class="button btn btn-default" ng-click="expandAll()">Expand All Sections</div>
             <div class="button btn btn-default" ng-click="collapseAll()">Collapse All Sections</div>
         </div>
-        <div class="row col-md-1"></div>
-        <div class="row col-md-4" id="summaryBox">
-            <div class="affix">
+        <div class="row col-md-4 col-md-offset-1" id="summaryBox">
                 <h3>Call Summary</h3>
                 <hr>
                 <h4>Company Name</h4>
@@ -63,7 +101,6 @@
                 <p>{{ data.timeframe }}</p>
                 <h4>Budget</h4>
                 <p>{{ data.budget }}</p>
-            </div>
         </div>
     </div>
     
