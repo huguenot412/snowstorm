@@ -80,26 +80,56 @@
         <div class="row col-md-4 col-md-offset-1" id="summaryBox">
                 <h3>Call Summary</h3>
                 <hr>
-                <h4>Company Name</h4>
-                <p>{{ data.companyName }}</p>
-                <h4>Company Description</h4>
-                <p>{{ data.companyDescription }}</p>
-                <h4>Number of Locations</h4>
-                <p>{{ data.locations }}</p>
-                <h4>Contact Name</h4>
-                <p>{{ data.contactFirstName + " " + data.contactLastName }}</p>
-                <h4>Contact Role</h4>
-                <p>{{ data.role }}</p>
-                <h4>Decision Maker</h4>
-                <p>{{ data.decisionMaker }}</p>
-                <h4>Product</h4>
-                <p>{{ data.productName }}</p>
-                <h4>Reason for new solution</h4>
-                <p>{{ data.reason }}</p>
-                <h4>Urgency / Timeframe</h4>
-                <p>{{ data.timeframe }}</p>
-                <h4>Budget</h4>
-                <p>{{ data.budget }}</p>
+                
+                <div ng-show="data.companyName">
+                    <h4>Company Name</h4>
+                    <p>{{ data.companyName }}</p>
+                </div>
+                
+                <div ng-show="data.companyDescription">
+                    <h4>Company Description</h4>
+                    <p>{{ data.companyDescription }}</p>
+                </div>
+                
+                <div ng-show="data.locations">
+                    <h4>Number of Locations</h4>
+                    <p>{{ data.locations }}</p>
+                </div>
+                
+                <div ng-show="data.contactFirstName || data.contactLastName">
+                    <h4>Contact Name</h4>
+                    <p>{{ data.contactFirstName + " " + data.contactLastName }}</p>
+                </div>
+                
+                <div ng-show="data.role">
+                    <h4>Contact Role</h4>
+                    <p>{{ data.role }}</p>
+                </div>
+                
+                <div ng-show="data.decisionMaker">
+                    <h4>Decision Maker</h4>
+                    <p>{{ data.decisionMaker }}</p>
+                </div>
+                
+                <div ng-show="data.productName">
+                    <h4>Product</h4>
+                    <p>{{ data.productName }}<span ng-show="data.platform">{{" for " + data.platform}}</span></p>
+                </div>
+                
+                <div ng-show="data.reason">
+                    <h4>Reason for new solution</h4>
+                    <p>{{ data.reason }}</p>
+                </div>
+                
+                <div ng-show="data.timeframe">
+                    <h4>Urgency / Timeframe</h4>
+                    <p>{{ data.timeframe }}</p>
+                </div>
+                
+                <div ng-show="data.budget">
+                    <h4>Budget</h4>
+                    <p>{{ data.budget }}</p>
+                </div>
         </div>
     </div>
     
