@@ -118,7 +118,7 @@
                 
                 <div ng-show="data.productName">
                     <h4>Product</h4>
-                    <p>{{ data.productName }}<span ng-show="data.platform">{{" for " + data.platform}}</span></p>
+                    <p>{{ data.productName }}<span ng-show="detectProduct(data.productName)">{{" for " + data.platform}}</span></p>
                 </div>
                 
                 <div ng-show="data.reason">
@@ -151,6 +151,7 @@
                         <option class="form-control" value="IPAM">IPAM</option>
                         <option class="form-control" value="LDR">LDR</option>
                         <option class="form-control" value="MSP">MSP</option>
+                        <option class="form-control" value="Assistant to the Regional Manager">Assistant to the Regional Manager</option>
                    </select>
                    <button class="btn btn-info" style="margin-left:20px" ng-click="userData.submitUserData()">Submit</button>
                 </form>

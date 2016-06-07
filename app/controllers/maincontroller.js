@@ -10,10 +10,14 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
             localStorage.setItem("firstName", this.firstName);
             localStorage.setItem("lastName", this.lastName);
             localStorage.setItem("role", this.role);
+            $scope.shadowBoxShow = false;
         },
         
         resetUserData: function(){
             localStorage.clear();
+            $scope.userData.firstName = localStorage.firstName;
+            $scope.userData.lastName = localStorage.lastName;
+            $scope.userData.role = localStorage.role;
             $scope.shadowBoxShow = true;
         }
     }
