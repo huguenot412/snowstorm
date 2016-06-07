@@ -10,6 +10,11 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
             localStorage.setItem("firstName", this.firstName);
             localStorage.setItem("lastName", this.lastName);
             localStorage.setItem("role", this.role);
+        },
+        
+        resetUserData: function(){
+            localStorage.clear();
+            $scope.shadowBoxShow = true;
         }
     }
     
@@ -23,7 +28,6 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
     $scope.collapseAll = function(){
         $(".panel-collapse").removeClass("in").attr({ariaExpanded: "false", style: "height: 0px;"});
-        
     }
     
     $scope.expandAll = function(){

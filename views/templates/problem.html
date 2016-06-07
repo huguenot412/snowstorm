@@ -1,5 +1,5 @@
 <div class="panel-body">
-    <p>{{section.data.contactFirstName}}, please help me to understand what happened in the company that made you start looking for a new {{getSolutionType(section.data.productName)}} solution? </p>
+    <p><strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>, please help me to understand what happened in the company that made you start looking for a new {{getSolutionType(section.data.productName)}} solution? </p>
     <textarea rows="3" cols="60"></textarea>
     <br>
     <button class="btn" ng-click="section.data.reason = 'event'">Compelling Event</button>
