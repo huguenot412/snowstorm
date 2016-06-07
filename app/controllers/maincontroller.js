@@ -1,5 +1,13 @@
 myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
+    $scope.shadowBoxShow = false;
+    
+    if(localStorage.firstName && localStorage.lastName && localStorage.role ) {
+
+    } else {
+        $scope.shadowBoxShow = true;
+    }
+    
     $scope.collapseAll = function(){
         $(".panel-collapse").removeClass("in").attr({ariaExpanded: "false", style: "height: 0px;"});
         
@@ -7,6 +15,17 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
     $scope.expandAll = function(){
         $(".panel-collapse").addClass("in").attr("aria-expanded", "true").removeAttr("style");
+    }
+    
+    $scope.userData = {
+        firstName: "",
+        lastName: "",
+        role: "",
+        submitUserData: function(){
+            localStorage.setItem("firstName", this.firstName);
+            localStorage.setItem("lastName", this.lastName);
+            localStorage.setItem("role", this.role);
+        }
     }
     
     $scope.data = {

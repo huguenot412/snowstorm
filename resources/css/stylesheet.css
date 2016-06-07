@@ -30,3 +30,41 @@ body {
     padding-left: 20px;    
 
 }
+.shadowBox {
+    width: 100%;
+    height: 2160px;
+    position: fixed;
+    background-color: rgba(0,0,0,.5);
+    top: 0px;
+}
+
+.formContainer {
+    width: 75%;
+    margin: auto;
+    background-color: deeppink;
+    margin-top: 300px;
+    
+}
+
+.centerBox {
+    display: table;
+    margin: auto;
+    text-align: center;
+}
+
+.centerBox h2 {
+    text-align: center;
+}
+
+.centerBox label {
+    margin-right: 20px;
+}
+
+.userForm {
+    margin-bottom: 20px;
+}
+
+.userForm select {
+    width: 200px;
+    display: inline;
+}
