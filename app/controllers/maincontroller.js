@@ -2,8 +2,21 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
     $scope.shadowBoxShow = false;
     
-    if(localStorage.firstName && localStorage.lastName && localStorage.role ) {
-
+    $scope.userData = {
+        firstName: "",
+        lastName: "",
+        role: "",
+        submitUserData: function(){
+            localStorage.setItem("firstName", this.firstName);
+            localStorage.setItem("lastName", this.lastName);
+            localStorage.setItem("role", this.role);
+        }
+    }
+    
+    if( localStorage.firstName && localStorage.lastName && localStorage.role ) {
+        $scope.userData.firstName = localStorage.firstName;
+        $scope.userData.lastName = localStorage.lastName;
+        $scope.userData.role = localStorage.role;
     } else {
         $scope.shadowBoxShow = true;
     }
@@ -17,20 +30,9 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         $(".panel-collapse").addClass("in").attr("aria-expanded", "true").removeAttr("style");
     }
     
-    $scope.userData = {
-        firstName: "",
-        lastName: "",
-        role: "",
-        submitUserData: function(){
-            localStorage.setItem("firstName", this.firstName);
-            localStorage.setItem("lastName", this.lastName);
-            localStorage.setItem("role", this.role);
-        }
-    }
-    
     $scope.data = {
-        name: "Chris Snow",
-        contactName: "CONTACT",
+        contactFirstName: "",
+        contactLastName: "",
         productName: "PRODUCT",
         timeForCall: null,
         role: "ROLE",
@@ -41,7 +43,9 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         budget: "",
         timeframe: "",
         companyName: "",
-        companyDescription: ""
+        companyDescription: "",
+        userData: $scope.userData
+        
     };
     
     $scope.detectProduct = function(product){

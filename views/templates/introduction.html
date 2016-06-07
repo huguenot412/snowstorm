@@ -1,5 +1,5 @@
 <div class="panel-body">
-    <p>Hello <strong>{{section.data.contactName}}</strong>. My name is {{section.data.name}} and I am an Acronis Backup specialist. {{section.data.contactName}}, I know that right now you are testing our product <strong>{{section.data.productName}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}</span></strong>.</p>
+    <p>Hello <strong>{{section.data.contactFirstName}}</strong>. My name is {{section.data.userData.firstName + " " + section.data.userData.lastName}} and I am an Acronis Backup specialist. {{section.data.contactName}}, I know that right now you are testing our product <strong>{{section.data.productName}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}</span></strong>.</p>
 
     <p>The goal of my call is help you to choose the best product from our portfolio that will fit your needs and agree on next steps.</p>
 
