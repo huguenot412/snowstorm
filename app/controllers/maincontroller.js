@@ -1,23 +1,30 @@
 myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     
     $scope.shadowBoxShow = false;
+    $scope.enterInfo = false;
     
     $scope.userData = {
         firstName: "",
         lastName: "",
         role: "",
         submitUserData: function(){
+            
+            if(this.firstName == "" || this.lastName == "" || this.role == ""){
+                $scope.enterInfo = true;
+                return;
+            }
+            
             localStorage.setItem("firstName", this.firstName);
             localStorage.setItem("lastName", this.lastName);
             localStorage.setItem("role", this.role);
+            
+            $scope.enterInfo = false;
             $scope.shadowBoxShow = false;
+            
         },
         
         resetUserData: function(){
             localStorage.clear();
-            $scope.userData.firstName = localStorage.firstName;
-            $scope.userData.lastName = localStorage.lastName;
-            $scope.userData.role = localStorage.role;
             $scope.shadowBoxShow = true;
         }
     }

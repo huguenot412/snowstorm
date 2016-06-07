@@ -2,9 +2,7 @@
    <form>
         <label name="contactName">What is the contact's name?</label>
         <input class="form-control nameInput" type=text ng-model="section.data.contactFirstName" name="contactFirstName" placeholder="First Name">
-        <br>
         <input class="form-control nameInput" type=text ng-model="section.data.contactLastName" name="contactLastName" placeholder="Last Name">
-        <br>
         <label name="productName">Which product are they testing?</label>
         <select class="form-control" name="productName" ng-model="section.data.productName" id="productSelect">
             <option class="form-control" value="Acronis Backup">Acronis Backup</option>
@@ -21,16 +19,10 @@
                 <option class="form-control" value="Hyper-V">Hyper-V</option>
             </select>
         </div>
-        <br>
         <label name="companyName">What is the company name?</label>
-        <br>
         <input type="text" name="companyName" ng-model="section.data.companyName" class="form-control">
-        <br>
         <label name="company">What does their company do?</label>
-        <br>
         <textarea ng-model="section.data.companyDescription" rows="3" cols="60" class="form-control"></textarea>
-        <br>
         <label name="company">How many locations do they have?</label><input type="number" ng-model="section.data.locations" size="3" min="1" class="form-control">
-        <br>
     </form>
 </div>

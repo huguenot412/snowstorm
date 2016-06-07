@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ng-app="myApp">
+<html ng-app="myApp" ng-cloak>
 
 <head>
     <title>Call Flow</title>
@@ -52,8 +52,9 @@
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
-          <div id="userInfo">
-            <h5>Current User: <span>{{userData.firstName + " " + userData.lastName + " (" + userData.role + ")"}}</span> </h5>
+            <div id="userInfo">
+                <h5>Current User: <span>{{userData.firstName + " " + userData.lastName + " (" + userData.role + ")"}}</span> </h5>
+                <div class="button btn btn-default" ng-click="userData.resetUserData()">Reset User Data</div>
             </div>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -77,12 +78,10 @@
                     </div>
                 </div>
             </div>
-            <br>
             <div class="button btn btn-default" ng-click="expandAll()">Expand All Sections</div>
             <div class="button btn btn-default" ng-click="collapseAll()">Collapse All Sections</div>
-            <div class="button btn btn-default" ng-click="userData.resetUserData()">Reset User Data</div>
         </div>
-        <div class="row col-md-4 col-md-offset-1" id="summaryBox">
+        <div class="row col-md-4 col-md-offset-1" id="summaryBox" style="display:none">
                 <h3>Call Summary</h3>
                 <hr>
                 
@@ -138,7 +137,7 @@
         </div>
     </div>
     
-    <div class="shadowBox" ng-show="shadowBoxShow">
+    <div class="shadowBox" ng-show="shadowBoxShow" style="display:none">
         <div class="formContainer">
            <div class="centerBox">
                 <h2>It looks like we don't have your information.</h2>
@@ -146,7 +145,7 @@
                    <label for="firstName"><input ng-model="userData.firstName" class="form-control" name="firstName"type="text" placeholder="First Name"></label>
                    <label for="lastName"><input ng-model="userData.lastName" class="form-control" name="lastName"type="text" placeholder="Last Name"></label>
                    <select ng-model="userData.role" class="form-control">
-                        <option value="">-- Select Role --</option>
+                        <option class="form-control" value="">-- Select Role --</option>
                         <option class="form-control" value="ITAM">ITAM</option>
                         <option class="form-control" value="IPAM">IPAM</option>
                         <option class="form-control" value="LDR">LDR</option>
@@ -155,6 +154,7 @@
                    </select>
                    <button class="btn btn-info" style="margin-left:20px" ng-click="userData.submitUserData()">Submit</button>
                 </form>
+                <h3 class="alert" ng-show="enterInfo">Please complete all fields</h3>
            </div>
         </div>
     </div>
@@ -177,6 +177,11 @@
     <script src="../app/controllers/maincontroller.js"></script>
     
     <!-- Services -->
+    <script>
+        <!-- Used to avoid shadow box from displaying load -->
+        $(".shadowBox").css("display","");
+        $(".summaryBox").css("display","");
+    </script>
 
 
 </body>

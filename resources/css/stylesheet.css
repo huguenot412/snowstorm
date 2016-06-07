@@ -72,5 +72,16 @@ body {
 #userInfo {
     float: right;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 7px;
+}
+
+#userInfo div, #userInfo h5 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.alert {
+    color: white;
+    margin: auto;
+    text-align: center;
 }
