@@ -59,8 +59,8 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         timeframe: "",
         companyName: "",
         companyDescription: "",
-        userData: $scope.userData
-        
+        userData: $scope.userData,
+        customIntro: false
     };
     
     $scope.detectProduct = function(product){

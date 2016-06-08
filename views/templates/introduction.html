@@ -1,7 +1,16 @@
 <div class="panel-body">
-    <p>Hello <strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>. My name is <strong>{{section.data.userData.firstName + " " + section.data.userData.lastName || "MY NAME"}}</strong> and I am an Acronis Backup specialist. <strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>, I know that right now you are testing our product <strong>{{section.data.productName || "PRODUCT"}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}</span></strong>.</p>
-
-    <p>The goal of my call is help you to choose the best product from our portfolio that will fit your needs and agree on next steps.</p>
-
-    <p>I will be your primary contact at Acronis throughout your evaluation period. In addition to advising you on the right products and licensing for your project I can also help by arranging  </p>
+   
+   <button class="btn" ng-click="section.data.customIntro=false">Default</button>
+   <button class="btn" ng-click="section.data.customIntro=true">Custom</button>
+    <div id="defaultIntro" ng-hide="section.data.customIntro">
+        <p>Hello <strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>. My name is <strong>{{section.data.userData.firstName + " " + section.data.userData.lastName || "MY NAME"}}</strong> and I am an Acronis Backup specialist. <strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>, I know that right now you are testing our product <strong>{{section.data.productName || "PRODUCT"}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}</span></strong>.</p>
+        
+        <p>The goal of my call is help you to choose the best product from our portfolio that will fit your needs and agree on next steps.</p>
+        
+        <p>I will be your primary contact at Acronis throughout your evaluation period. In addition to advising you on the right products and licensing for your project I can also help by arranging  </p>
+    </div>
+    <div id="customIntro" ng-show="section.data.customIntro">
+       <p>Custom Intro</p>
+        
+    </div>
 </div>
