@@ -24,7 +24,6 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         },
         
         resetUserData: function(){
-            localStorage.clear();
             $scope.shadowBoxShow = true;
         }
     }
@@ -60,8 +59,12 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         companyName: "",
         companyDescription: "",
         userData: $scope.userData,
-        customIntro: false
+        customIntro: localStorage.customIntro || "You don't have a saved custom introduction.",
+        editingIntro: false,
+        customIntroDisplay: false
     };
+    
+    $scope.customIntro = "";
     
     $scope.detectProduct = function(product){
         if(product == "Acronis Backup" || product == "Acronis Backup Advanced"){
@@ -80,6 +83,20 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         } else {
             return "backup";
         }
+    }
+    
+    $scope.detectCustomIntro = function(){
+        if(localStorage.customIntro){
+            return "Edit Intro";
+        } else {
+            return "Create Intro";
+        }
+    }
+    
+    $scope.saveCustomIntro = function(){
+        localStorage.setItem("customIntro", $scope.data.customIntro);
+        $scope.data.customIntro = localStorage.customIntro;
+        $scope.data.editingIntro = false;
     }
        
     $scope.getTemplateUrl = function(className) {
