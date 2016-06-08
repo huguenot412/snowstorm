@@ -1,7 +1,7 @@
 <div class="panel-body">
    
-   <button class="btn" ng-click="section.data.customIntroDisplay=false">Default</button>
-   <button class="btn" ng-click="section.data.customIntroDisplay=true">Custom</button>
+   <button class="btn btn-default" ng-click="section.data.customIntroDisplay=false">Default</button>
+   <button class="btn btn-default" ng-click="section.data.customIntroDisplay=true">Custom</button>
     <div id="defaultIntro" ng-hide="section.data.customIntroDisplay">
         <p>Hello <strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>. My name is <strong>{{section.data.userData.firstName + " " + section.data.userData.lastName || "MY NAME"}}</strong> and I am an Acronis Backup specialist. <strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>, I know that right now you are testing our product <strong>{{section.data.productName || "PRODUCT"}} <span ng-show="detectProduct(section.data.productName)">for {{section.data.platform}}</span></strong>.</p>
         
@@ -10,9 +10,13 @@
         <p>I will be your primary contact at Acronis throughout your evaluation period. In addition to advising you on the right products and licensing for your project I can also help by arranging  </p>
     </div>
     <div id="customIntro" ng-show="section.data.customIntroDisplay">
-       <textarea rows="5" cols="20" class="form-control" ng-model="section.data.customIntro" ng-show="section.data.editingIntro"></textarea>
-       <div ng-hide="section.data.editingIntro">{{section.data.customIntro}}</div>
-       <button class="btn" ng-click="section.data.editingIntro = true" ng-hide="section.data.editingIntro">{{detectCustomIntro()}}</button> 
-       <button class="btn" ng-click="saveCustomIntro()" ng-show="section.data.editingIntro">Save</button>
+        <div>
+            <textarea class="form-control" ng-model="section.data.customIntro" ng-show="section.data.editingIntro"></textarea>
+            <button class="btn btn-default" ng-click="saveCustomIntro()" ng-show="section.data.editingIntro">Save</button>
+        </div>
+        <div ng-hide="section.data.editingIntro">
+            <p id="intro">{{section.data.customIntro}}</p>
+            <button class="btn btn-default" ng-click="section.data.editingIntro = true" ng-hide="section.data.editingIntro">{{detectCustomIntro()}}</button> 
+        </div>
     </div>
 </div>

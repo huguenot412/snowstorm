@@ -1,12 +1,12 @@
 <div class="panel-body">
     <p><strong>{{section.data.contactFirstName || "CONTACT NAME"}}</strong>, please help me to understand what happened in the company that made you start looking for a new {{getSolutionType(section.data.productName)}} solution? </p>
-    <textarea rows="3" cols="60"></textarea>
+    <textarea class="form-control"></textarea>
     <br>
-    <button class="btn" ng-click="section.data.reason = 'event'">Compelling Event</button>
-    <button class="btn" ng-click="section.data.reason = 'project'">Project</button>
+    <button class="btn btn-default" ng-click="section.data.reason = 'event'">Compelling Event</button>
+    <button class="btn btn-default" ng-click="section.data.reason = 'project'">Project</button>
     <div ng-hide="section.data.reason == null">
         <div id="eventQuestions" ng-show="section.data.reason == 'event'">
-            <p>What happened?</p>
+            <span class="icon ion-checkmark"></span><p class="question">What happened?</p>
             <p>What was the main reasons for that?</p>
             <p>How much time was needed to recover?</p>
             <p>Why did take it so long?</p>

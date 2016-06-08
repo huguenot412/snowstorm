@@ -41,7 +41,7 @@ body {
 .formContainer {
     width: 75%;
     margin: auto;
-    background-color: deeppink;
+    background-color: #FFA500;
     margin-top: 300px;
     
 }
@@ -86,9 +86,41 @@ body {
     text-align: center;
 }
 
+.form-control {
+    margin-bottom: 10px;    
+}
+
 #summaryBox {
     position: fixed;
-    right: 100px;
+    right: 150px;
     height: 600px;
     overflow: auto;
+}
+
+.container .btn {
+    margin-bottom: 10px !important;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+#intro {
+    margin-bottom: 20px;
+}
+
+p, .sectionDescription {
+    line-height: 1.5em;
+}
+
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.ion-checkmark {
+    color: seagreen;
+    margin-right: 5px;
 }

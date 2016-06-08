@@ -46,12 +46,6 @@
             <li><a href="#">Contacts</a></li>
             <li><a href="#">Product Overviews</a></li>
           </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
             <div id="userInfo">
                 <h5>Current User: <span>{{userData.firstName + " " + userData.lastName + " (" + userData.role + ")"}}</span> </h5>
                 <div class="button btn btn-default" ng-click="userData.resetUserData()">Reset User Data</div>
@@ -65,13 +59,15 @@
         <div class="row col-md-7">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default" ng-repeat="section in sections">
+                    <a data-toggle="collapse" href="{{'#' + section.className}}">
                     <div class="panel-heading">
                           <h4 class="panel-title">
-                                <a data-toggle="collapse" href="{{'#' + section.className}}">
+                                
                                     <div class="iconContainer"><span class="icon {{section.icon}}"></span></div>
-                                {{ section.title }}</a>
+                                {{ section.title }}
                           </h4>
-                    </div>    
+                    </div>
+                    </a>   
                     <div id="{{section.className}}" class="panel-collapse collapse">
                         <h5 class="sectionDescription">{{section.description}}</h5>
                         <ng-include src="getTemplateUrl(section.className)"></ng-include>
