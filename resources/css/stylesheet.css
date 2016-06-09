@@ -124,3 +124,7 @@ a {
     color: seagreen;
     margin-right: 5px;
 }
+
+.question::before {
+    content: "Checked";
+}

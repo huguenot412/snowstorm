@@ -6,6 +6,10 @@
     <button class="btn btn-default" ng-click="section.data.reason = 'project'">Project</button>
     <div ng-hide="section.data.reason == null">
         <div id="eventQuestions" ng-show="section.data.reason == 'event'">
+           
+           <p ng-repeat="question in section.data.problemQuestions" ng-click="toggleAsked(question)"><span class="icon ion-checkmark" ng-show="question.asked"></span>{{question.text}}</p>
+        
+<!--
             <span class="icon ion-checkmark"></span><p class="question">What happened?</p>
             <p>What was the main reasons for that?</p>
             <p>How much time was needed to recover?</p>
@@ -23,6 +27,7 @@
             <p>What’s make you looking for new solution?</p>
             <p>Why current solution does not fit?</p>
             <p>thank you for sharing that!</p>
+-->
         </div>
         <div id="projectQuestions" ng-show="section.data.reason == 'project'">
             <p>Project</p>

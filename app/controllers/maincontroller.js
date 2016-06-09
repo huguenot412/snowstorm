@@ -1,4 +1,4 @@
-myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
+myApp.controller('mainController', ['$scope', '$http', 'problemQuestions', function($scope, $http, problemQuestions){
     
     $scope.shadowBoxShow = false;
     $scope.enterInfo = false;
@@ -61,7 +61,8 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
         userData: $scope.userData,
         customIntro: localStorage.customIntro || "You don't have a saved custom introduction.",
         editingIntro: false,
-        customIntroDisplay: false
+        customIntroDisplay: false,
+        problemQuestions: problemQuestions
     };
     
     $scope.customIntro = "";
@@ -101,6 +102,16 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
        
     $scope.getTemplateUrl = function(className) {
         return "templates/" + className + ".html";
+    }
+    
+    $scope.toggleAsked = function(question) {
+        
+        if( question.asked == false ) {
+            question.asked = true;
+        } else {
+            question.asked = false;
+        }
+        
     }
     
     $scope.sections = [
