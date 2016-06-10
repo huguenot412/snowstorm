@@ -125,6 +125,10 @@ a {
     margin-right: 5px;
 }
 
-.question::before {
-    content: "Checked";
+textarea {
+    resize: vertical;
+}
+
+.fadedCheckmark {
+    opacity: .5;
 }

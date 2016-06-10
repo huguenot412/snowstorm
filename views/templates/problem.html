@@ -7,7 +7,7 @@
     <div ng-hide="section.data.reason == null">
         <div id="eventQuestions" ng-show="section.data.reason == 'event'">
            
-           <p ng-repeat="question in section.data.problemQuestions" ng-click="toggleAsked(question)"><span class="icon ion-checkmark" ng-show="question.asked"></span>{{question.text}}</p>
+           <p ng-repeat="question in section.data.problemQuestions" ng-click="toggleAsked(question)" ng-mouseenter="question.hover = true" ng-mouseleave="question.hover = false"><span class="icon ion-checkmark" ng-show="question.asked || question.hover" ng-class="detectHover(question)"></span>{{question.text}}</p>
         
 <!--
             <span class="icon ion-checkmark"></span><p class="question">What happened?</p>

@@ -40,6 +40,12 @@ myApp.controller('mainController', ['$scope', '$http', 'problemQuestions', funct
         $(".panel-collapse").removeClass("in").attr({ariaExpanded: "false", style: "height: 0px;"});
     }
     
+    $scope.detectHover = function(question){
+        if(question.hover){
+            return "fadedCheckmark";
+        }
+    }
+    
     $scope.expandAll = function(){
         $(".panel-collapse").addClass("in").attr("aria-expanded", "true").removeAttr("style");
     }
@@ -105,6 +111,8 @@ myApp.controller('mainController', ['$scope', '$http', 'problemQuestions', funct
     }
     
     $scope.toggleAsked = function(question) {
+        
+        question.hover = false;
         
         if( question.asked == false ) {
             question.asked = true;

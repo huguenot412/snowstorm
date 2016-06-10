@@ -4,12 +4,14 @@ myApp.service("problemQuestions", function(){
        
         {   
             text: "What happened?",
-            asked: false
+            asked: false,
+            hover: false
         },
         
         {   
             text: "What was the main reasons for that?",
-            asked: false
+            asked: false,
+            hover: false
         }
         
     ];
