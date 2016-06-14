@@ -44,6 +44,11 @@ myApp.controller('mainController', ['$scope', '$http', 'problemQuestions', funct
         if(question.hover){
             return "fadedCheckmark";
         }
+        if(question.asked){
+            return "checkmarkVisible";
+        } else {
+            return "checkmarkHidden";
+        }
     }
     
     $scope.expandAll = function(){

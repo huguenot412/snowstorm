@@ -6,8 +6,22 @@
     <button class="btn btn-default" ng-click="section.data.reason = 'project'">Project</button>
     <div ng-hide="section.data.reason == null">
         <div id="eventQuestions" ng-show="section.data.reason == 'event'">
-           
-           <p ng-repeat="question in section.data.problemQuestions" ng-click="toggleAsked(question)" ng-mouseenter="question.hover = true" ng-mouseleave="question.hover = false"><span class="icon ion-checkmark" ng-show="question.asked || question.hover" ng-class="detectHover(question)"></span>{{question.text}}</p>
+               
+               <table class="table">
+                   <tr ng-repeat="question in section.data.problemQuestions" class="questionRow">
+                       <td class="icon ion-checkmark checkmark"  
+                            ng-class="detectHover(question)"></td>
+                       <td ng-click="toggleAsked(question)" 
+                            ng-mouseenter="question.hover = true" 
+                            ng-mouseleave="question.hover = false">
+                            {{question.text}}</td>
+                   </tr>  
+               </table>
+               
+                <div >                  
+                </div>
+                <p  </p>
+            </div>
         
 <!--
             <span class="icon ion-checkmark"></span><p class="question">What happened?</p>

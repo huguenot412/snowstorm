@@ -132,3 +132,19 @@ textarea {
 .fadedCheckmark {
     opacity: .5;
 }
+
+.checkmarkHidden {
+    visibility: hidden;
+}
+
+.checkmarkVisible {
+    visibility: visible;
+}
+
+.checkmark {
+    width: 30px;
+}
+
+.questionRow {
+    padding-bottom: 50px;
+}
